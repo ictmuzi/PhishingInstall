@@ -169,7 +169,7 @@ echo -e "=======================================================================
 apt-get install certbot -y >/dev/null 2>&1
 if [ $? -eq 0 ];then
 	echo -e "\e[94mCertbot安装成功,准备申请证书\e[0m"
-	certbot certonly --non-interactive --standalone -d mail.${yourdomain} --agree-tos -m ad@svr.org >/dev/null 2>&1
+	certbot certonly --non-interactive --standalone --server https://acme-v02.api.letsencrypt.org/directory -d mail.${yourdomain} --agree-tos -m ad@svr.org >/dev/null 2>&1
 	if [ $? -eq 0 ] && [ -d "/etc/letsencrypt/live/mail.${yourdomain}/" ]; then
 		echo -e "\e[94m证书申请成功,开始配置Postfix, 请稍后...\e[0m\n"
 	else
