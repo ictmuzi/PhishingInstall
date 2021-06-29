@@ -67,7 +67,7 @@ if [ $? -eq 0 ];then
 	echo -e "\e[94m网络正常,开始安装基础工具及相关依赖,请稍后...\e[0m"
 	sleep 3
 	apt-get update >/dev/null 2>&1
-	apt-get install gcc gdb make cmake socat telnet tree tcpdump iptraf iftop nethogs lrzsz git unzip curl wget vim python2.7 python2.7-dev -y >/dev/null 2>&1
+	apt-get install gcc gdb make cmake socat telnet tree tcpdump iptraf iftop nethogs lrzsz git unzip curl wget vim python2.7 python2.7-dev software-properties-common -y >/dev/null 2>&1
 	if [ $? -eq 0 ];then
 		echo -e "\e[94m相关工具及依赖库已全部安装成功,准备安装 Postfix,请稍后...\e[0m\n"
 		sleep 3
